@@ -1,0 +1,31 @@
+.tm-acc {
+  --tm-acc-transition-duration: 300ms;
+  --tm-acc-transition-easing: ease;
+}
+
+.tm-acc-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tm-acc-trigger {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+}
+
+.tm-acc-item.is-open > .tm-acc-trigger {
+  opacity: 1;
+}
+
+.tm-acc-body {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height var(--tm-acc-transition-duration) var(--tm-acc-transition-easing),
+    opacity var(--tm-acc-transition-duration) var(--tm-acc-transition-easing);
+  will-change: height, opacity;
+}
+
+.tm-acc-item.is-open > .tm-acc-body {
+  opacity: 1;
+}
